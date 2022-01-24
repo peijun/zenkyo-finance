@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  namespace :admins do
+    resources :slips
+  end
   devise_for :admins, controllers: {
     sessions:      'admins/sessions',
     passwords:     'admins/passwords',

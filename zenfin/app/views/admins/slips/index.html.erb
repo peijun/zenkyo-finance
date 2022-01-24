@@ -1,0 +1,15 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Slips</h1>
+
+<div id="admins_slips">
+  <% @admins_slips.each do |admins_slip| %>
+    <%= render admins_slip %>
+    <p><%= admins_slip.number %></p>
+    <p>
+      <%= link_to "Show this slip", [:admins, admins_slip] %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New slip", new_admins_slip_path %>

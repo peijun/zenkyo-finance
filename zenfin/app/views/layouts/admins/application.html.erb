@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title> Test </title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <%= stylesheet_link_tag 'application', media: 'all' %>
+    <%= javascript_include_tag 'application' %>
+  </head>
+  <body>
+    <h1>Admins</h1>
+    <% if admin_signed_in? %>
+      <%= "LogOnUser: #{current_admin.email}" %>
+      <%= link_to 'SignOut', destroy_admin_session_path, method: :delete %>
+    <% else %>
+      <%= link_to 'SingUp', new_admin_registration_path %>
+      <%= link_to 'SignIn', new_admin_session_path %> 
+    <% end %>
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
+    <%= yield %>
+  </body>
+</html>
