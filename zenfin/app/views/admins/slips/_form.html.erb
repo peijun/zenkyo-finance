@@ -23,6 +23,10 @@
     <%= form.number_field :amount %>  
   </div>
   <div class="mb-4">
+    <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="slip_issue_date">領収書発行日</label>
+    <%= form.date_field :issue_date %>  
+  </div>
+  <div class="mb-4">
     <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="slip_supplement">補足</label>
     <%= form.text_field :supplement %>
   </div>

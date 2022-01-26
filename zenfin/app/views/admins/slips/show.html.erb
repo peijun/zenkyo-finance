@@ -15,6 +15,11 @@
     <%= @admins_slip.amount %>  
     </p>
   <p>
+  <p>
+    <strong>領収書発行日</strong>
+    <%= @admins_slip.issue_date.strftime("%Y-%m-%d") %>  
+  </p>
+  <p>
   <strong>補足</strong>
     <%= @admins_slip.supplement %>
     </p>
