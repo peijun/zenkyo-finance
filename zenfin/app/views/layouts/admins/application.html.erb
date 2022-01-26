@@ -4,14 +4,16 @@
     <title> Test </title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-    <%= stylesheet_link_tag 'application', media: 'all' %>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= stylesheet_link_tag "tailwind", "inter-font", "data-turbo-track": "reload" %>
     <%= javascript_include_tag 'application' %>
   </head>
   <body>
-    <h1>Admins</h1>
     <% if admin_signed_in? %>
-      <%= "LogOnUser: #{current_admin.email}" %>
-      <%= link_to 'SignOut', destroy_admin_session_path, method: :delete %>
+    <div class="bg-blue-100 border border-blue-500 text-blue-700 px-4 py-3 rounded" role="alert">
+      <p class="font-bold">LogOnUser</p>
+      <p class="text-sm"><%= "#{current_admin.email}" %><%= button_to ':SignOut', destroy_admin_session_path,method: :delete %></p>
+    </div>
     <% else %>
       <%= link_to 'SingUp', new_admin_registration_path %>
       <%= link_to 'SignIn', new_admin_session_path %> 

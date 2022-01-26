@@ -6,6 +6,11 @@ class Admins::SlipsController < Admins::ApplicationController
     @admins_slips = Slip.all
   end
 
+  #GET /dashboard
+  def dashboard
+    @admins_slips = Slip.last(4)
+  end
+
   # GET /admins/slips/1 or /admins/slips/1.json
   def show
     @admins_slip = Slip.find(params[:id])

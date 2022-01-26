@@ -12,7 +12,8 @@ Rails.application.routes.draw do
     passwords:     'users/passwords',
     registrations: 'users/registrations'
   }
-  root to: 'home#index'
+  get '/dashboard/admin' => 'admins/slips#dashboard'
+  root to: 'admins/slips#dashboard'
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Defines the root path route ("/")
