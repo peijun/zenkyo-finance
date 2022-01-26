@@ -11,6 +11,11 @@ Admin.find_or_create_by(id: 1) do |admin|
     admin.password = "password"
 end
 
+User.find_or_create_by(id: 1) do |admin|
+    admin.email = "user@example.com"
+    admin.password = "password"
+end
+
 Sspn.find_or_create_by(id: 99) do |sspn|
     sspn.amount = 0
     sspn.number = "特別支出なし"
