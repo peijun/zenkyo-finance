@@ -2,15 +2,17 @@
 <div class="mt-8 mb-12">
   <h1>ダッシュボード</h1>
 </div>
-<button class="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded"><%= link_to "出金伝票", new_admins_slip_path %></button>
+<button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"><%= link_to "出金伝票", new_admins_slip_path %></button>
 
-  <section class="main">
+<div class="grid grid-cols-2">
+  <div class="col-span-1">
     <h2>支出一覧</h2>
     <table class="table-auto">
       <thead>
         <th class="px-4 py-2">伝票番号</th>
         <th class="px-4 py-2">金額</th>
         <th class="px-4 py-2">支払先</th>
+        <th class="px-4 py-2">領収書発行日</th>
         <th class="px-4 py-2">リンク</th>
       </thead>
       <tbody>
@@ -20,10 +22,12 @@
           <th class="border px-4 py-2"><%= admins_slip.number %></th>
           <th class="border px-4 py-2"><%= admins_slip.amount %></th>
           <th class="border px-4 py-2"><%= admins_slip.payee %></th>
+          <th class="border px-4 py-2"><%= admins_slip.issue_date&.strftime("%Y-%m-%d") %></th>
           <th class="border px-4 py-2"><%= link_to "Show this slip", [:admins, admins_slip] %></th>
         </tr>
       <% end %>
       </tbody>
-  </section>
-  <section class="side">
-  </section>
+  </div>
+  <div class="col-span-2">
+  </div>
+<div>
