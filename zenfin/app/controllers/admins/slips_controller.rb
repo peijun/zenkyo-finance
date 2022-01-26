@@ -11,6 +11,7 @@ class Admins::SlipsController < Admins::ApplicationController
     @admins_slips = Slip.last(4)
     @admins_sspns = Sspn.where.not(id: 99)
     hash = Hash.new()
+    hash2 = Hash.new()
     for s in @admins_sspns do
       sum = s.amount
       for i in s.slips do
@@ -19,6 +20,16 @@ class Admins::SlipsController < Admins::ApplicationController
       hash[s.number] = sum
     end
     @remain_hash = hash
+    for j in User.all() do
+      sum2 = 0
+      for k in j.slips do
+        if k.reimbursement then
+          sum2 += k.amount
+        end
+      end
+      hash2[j.email] = sum2
+    end
+    @user_hash = hash2
   end
 
   # GET /admins/slips/1 or /admins/slips/1.json
@@ -81,6 +92,6 @@ class Admins::SlipsController < Admins::ApplicationController
 
     # Only allow a list of trusted parameters through.
     def admins_slip_params
-      params.fetch(:slip, {}).permit(:number, :payee, :amount, :supplement, :sspn_id, :account, :year, :reimbursement, :issue_date)
+      params.fetch(:slip, {}).permit(:number, :payee, :amount, :supplement, :sspn_id, :account, :year, :reimbursement, :issue_date, :user_id)
     end
 end

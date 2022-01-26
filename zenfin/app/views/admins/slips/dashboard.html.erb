@@ -45,5 +45,20 @@
           <% end %>
         </tbody>
       </table>
+    <h2>立替清算残金</h2>
+      <table class="table-auto">
+        <thead>
+          <th class="px-4 py-2">メールアドレス</th>
+          <th class="px-4 py-2">残金</th>
+        </thead>
+        <tbody>
+          <% @user_hash.each do |key,value| %>
+            <tr>
+              <th class="border px-4 py-2"><%= key %></th>
+              <th class="border px-4 py-2"><%= value %></th>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
   </div>
 </div>
