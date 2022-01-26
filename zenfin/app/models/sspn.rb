@@ -1,0 +1,2 @@
+class Sspn < ApplicationRecord
+end
