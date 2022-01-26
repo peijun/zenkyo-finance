@@ -14,7 +14,6 @@ class Admins::SlipsController < Admins::ApplicationController
   # GET /admins/slips/1 or /admins/slips/1.json
   def show
     @admins_slip = Slip.find(params[:id])
-    print @admins_slip.amount
   end
 
   # GET /admins/slips/new
