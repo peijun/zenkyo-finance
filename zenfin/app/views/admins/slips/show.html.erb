@@ -1,48 +1,50 @@
 <p style="color: green"><%= notice %></p>
 
 <%= render @admins_slip %>
-
-<p>
-  <strong>番号</strong>
-  <%= @admins_slip.number %>  
-</p>
-  <p>
-    <strong>支払先</strong>
-    <%= @admins_slip.payee %>  
-    </p>
-  <p>
-    <strong>金額</strong>
-    <%= @admins_slip.amount %>  
-    </p>
-  <p>
-  <p>
-    <strong>領収書発行日</strong>
-    <%= @admins_slip.issue_date.strftime("%Y-%m-%d") %>  
-  </p>
-  <p>
-  <strong>補足</strong>
-    <%= @admins_slip.supplement %>
-    </p>
-  <p>
-  <strong>特別支出許可番号</strong>
-    <%= @admins_slip.sspn.number %>
-    </p>
-  <p>
-  <strong>会計</strong>
-    <%= @admins_slip.account %>
-    </p>
-  <p>
-    <strong>年度</strong>
-    <%= @admins_slip.year %>
-    </p>
-  <p>
-    <strong>支払元</strong>
-    <%= @admins_slip.reimbursement %>
-    </p>
+<table class="table-auto mt-4 w-full">
+<tbody>
+  <tr class="border-b">
+    <td class="px-4 py-2">伝票番号</td>
+    <td class="px-4 py-2"><%= @admins_slip.number %></td>
+  </tr>
+  <tr class="border-b">
+    <td class="px-4 py-2">支払先</td>
+    <td class="px-4 py-2"><%= @admins_slip.payee %></td>
+  </tr>
+  <tr class="border-b">
+    <td class="px-4 py-2">金額</td>
+    <td class="px-4 py-2"><%= @admins_slip.amount %></td>
+  </tr>
+  <tr class="border-b">
+    <td class="px-4 py-2">領収書発行日</td>
+    <td class="px-4 py-2"><%= @admins_slip.issue_date&.strftime("%Y-%m-%d") %></td>
+  </tr>
+  <tr class="border-b">
+    <td class="px-4 py-2">補足</td>
+    <td class="px-4 py-2"><%= @admins_slip.supplement %></td>
+  </tr>
+  <tr class="border-b">
+    <td class="px-4 py-2">特別支出許可番号</td>
+    <td class="px-4 py-2"><%= @admins_slip.sspn&.number %></td>
+  </tr>
+  <tr class="border-b">
+    <td class="px-4 py-2">会計</td>
+    <td class="px-4 py-2"><%= @admins_slip.account %></td>
+  </tr>
+  <tr class="border-b">
+    <td class="px-4 py-2">年度</td>
+    <td class="px-4 py-2"><%= @admins_slip.year %></td>
+  </tr>
+  <tr class="border-b">
+    <td class="px-4 py-2">支払元</td>
+    <td class="px-4 py-2"><%= @admins_slip.reimbursement %></td>
+  </tr>
+</tbody>
+</table>
 
 <div>
-  <%= link_to "Edit this slip", edit_admins_slip_path(@admins_slip) %> |
-  <%= link_to "Back to slips", admins_slips_path %>
+  <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"><%= link_to "修正", edit_admins_slip_path(@admins_slip) %></button> |
+  <button class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded"><%= link_to "出金伝票一覧", admins_slips_path %></button>
 
-  <%= button_to "Destroy this slip", [:admins, @admins_slip], method: :delete %>
+  <%= button_to "削除", [:admins, @admins_slip], method: :delete,class: "bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded" %>
 </div>
