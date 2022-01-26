@@ -10,44 +10,43 @@
       </ul>
     </div>
   <% end %>
-
-  <div class="field">
-    <%= form.label :number %>
+  <div class="mb-4">
+    <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="slip_number">伝票番号</label>
     <%= form.number_field :number %>  
   </div>
-  <div class="field">
-    <%= form.label :payee %>
+  <div class="mb-4">
+    <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="slip_payee">支出先</label>
     <%= form.text_field :payee %>  
   </div>
-  <div class="field">
-    <%= form.label :amount %>
+  <div class="mb-4">
+    <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="slip_amount">金額</label>
     <%= form.number_field :amount %>  
   </div>
-  <div class="field">
-    <%= form.label :supplement %>
+  <div class="mb-4">
+    <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="slip_supplement">補足</label>
     <%= form.text_field :supplement %>
   </div>
-  <div class="field">
-    <%= form.label :sspn_id %>
+  <div class="mb-4">
+    <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="slip_sspn_id">特別支出許可番号</label>
     <%= form.collection_select :sspn_id,Sspn.all, :id, :number %>
   </div>
-  <div class="field">
-    <%= form.label :account %>
+  <div class="mb-4">
+    <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="slip_account">会計単位</label>
     <%= form.text_field :account %>
   </div>
-  <div class="field">
-    <%= form.label :year %>
+  <div class="mb-4">
+    <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="slip_year">会計年度</label>
     <%= form.number_field :year %>
   </div>
-    <div class="field">
-    <%= form.label :user_id %>
+    <div class="mb-4">
+    <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="slip_user_id">出金ユーザー</label>
     <%= form.collection_select :user_id,User.all, :id, :email %>
   </div>
-  <div class="field">
-    <%= form.label :reimbursement %>
+  <div class="mb-4">
+    <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="slip_reimbursement">出金元</label>
     <%= form.select :reimbursement,[['団体',0],['個人',1]] %>
   </div> 
   <div class="actions">
-    <%= form.submit %>
+    <button class="flex-shrink-0 bg-teal-500 hover:bg-teal-700 border-teal-500 hover:border-teal-700 text-sm border-4 text-white py-1 px-2 rounded"><input type="submit" name="commit" value="確定" data-disable-with="Create Slip"></button>
   </div>
 <% end %>
