@@ -4,7 +4,7 @@
 </div>
 <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"><%= link_to "出金伝票", new_admins_slip_path %></button>
 
-<div class="grid grid-cols-2">
+<div class="grid grid-cols-2 gap-4">
   <div class="col-span-1">
     <h2>支出一覧</h2>
     <table class="table-auto">
@@ -27,7 +27,23 @@
         </tr>
       <% end %>
       </tbody>
+    </table>
   </div>
   <div class="col-span-2">
+    <h2>特別支出残高</h2>
+      <table class="table-auto">
+        <thead>
+          <th class="px-4 py-2">番号</th>
+          <th class="px-4 py-2">残高</th>
+        </thead>
+        <tbody>
+          <% @remain_hash.each do |key,value| %>
+            <tr>
+              <th class="border px-4 py-2"><%= key %></th>
+              <th class="border px-4 py-2"><%= value %></th>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
   </div>
-<div>
+</div>

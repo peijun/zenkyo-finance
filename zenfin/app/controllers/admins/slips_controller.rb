@@ -9,6 +9,16 @@ class Admins::SlipsController < Admins::ApplicationController
   #GET /dashboard
   def dashboard
     @admins_slips = Slip.last(4)
+    @admins_sspns = Sspn.where.not(id: 99)
+    hash = Hash.new()
+    for s in @admins_sspns do
+      sum = s.amount
+      for i in s.slips do
+        sum -= i.amount
+      end
+      hash[s.number] = sum
+    end
+    @remain_hash = hash
   end
 
   # GET /admins/slips/1 or /admins/slips/1.json
