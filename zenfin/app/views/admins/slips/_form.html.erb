@@ -28,8 +28,8 @@
     <%= form.text_field :supplement %>
   </div>
   <div class="field">
-    <%= form.label :sspn %>
-    <%= form.text_field :sspn %>
+    <%= form.label :sspn_id %>
+    <%= form.collection_select :sspn_id,Sspn.all, :id, :number %>
   </div>
   <div class="field">
     <%= form.label :account %>

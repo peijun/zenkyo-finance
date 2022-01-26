@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_01_26_184605) do
+ActiveRecord::Schema.define(version: 2022_01_26_192150) do
 
   create_table "admins", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -31,7 +31,6 @@ ActiveRecord::Schema.define(version: 2022_01_26_184605) do
     t.string "payee"
     t.integer "amount"
     t.string "supplement"
-    t.string "sspn"
     t.string "account"
     t.integer "year"
     t.boolean "reimbursement"

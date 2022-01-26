@@ -1,3 +1,3 @@
 class Slip < ApplicationRecord
-    belong_to :sspn, optional: true
+    belongs_to :sspn, optional: true
 end

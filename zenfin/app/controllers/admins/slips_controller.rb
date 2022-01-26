@@ -72,6 +72,6 @@ class Admins::SlipsController < Admins::ApplicationController
 
     # Only allow a list of trusted parameters through.
     def admins_slip_params
-      params.fetch(:slip, {}).permit(:number, :payee, :amount, :supplement, :sspn, :account, :year, :reimbursement)
+      params.fetch(:slip, {}).permit(:number, :payee, :amount, :supplement, :sspn_id, :account, :year, :reimbursement)
     end
 end
