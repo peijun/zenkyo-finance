@@ -8,6 +8,7 @@
         <th class="px-4 py-2">伝票番号</th>
         <th class="px-4 py-2">金額</th>
         <th class="px-4 py-2">支払先</th>
+        <th class="px-4 py-2">領収書発行日</th>
         <th class="px-4 py-2">リンク</th>
       </thead>
       <tbody>
@@ -17,6 +18,7 @@
           <th class="border px-4 py-2"><%= admins_slip.number %></th>
           <th class="border px-4 py-2"><%= admins_slip.amount %></th>
           <th class="border px-4 py-2"><%= admins_slip.payee %></th>
+          <th class="border px-4 py-2"><%= admins_slip.issue_date&.strftime("%Y-%m-%d") %></th>
           <th class="border px-4 py-2"><%= link_to "Show this slip", [:admins, admins_slip] %></th>
         </tr>
       <% end %>
