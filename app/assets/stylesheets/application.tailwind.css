@@ -12,6 +12,10 @@
 
 */
 
+/*
+参考：
+https://note.com/shimotsu_/n/n84fb12aa110e
+*/
 @layer base {
   h1 {
     @apply text-4xl sm:text-5xl font-bold mt-8 mb-4;
